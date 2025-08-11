@@ -1,11 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600&family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600&family=Outfit:wght@100..900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
+}
+
+/* Tema Claro */
+.light-theme {
+  --color-bg: #f9fafc;
+  --color-surface: #ffffff;
+  --color-primary: #1e40af;
+  --color-primary-hover: #3b82f6;
+  --color-success: #16a34a;
+  --color-danger: #ef4444;
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+}
+
+/* Tema Escuro */
+.dark-theme {
+  --color-bg: #0b0f1a;
+  --color-surface: #11182c;
+  --color-primary: #2979ff;
+  --color-primary-hover: #80bfff;
+  --color-success: #00c48c;
+  --color-danger: #ff5c5c;
+  --color-text: #ffffff;
+  --color-text-muted: #a6b1c3;
+  --color-border: #1f2b45;
 }

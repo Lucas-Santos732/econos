@@ -7,51 +7,7 @@ main {
   background-color: #0b0f1a;
 }
 
-.sidenav {
-  height: 100%;
-  width: 20rem;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #11182c;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 30px;
-  border: 1px solid #1f2b45;
-  display: flex;
-  flex-direction: column;
-  a {
-    padding-left: 5%;
-    font-size: 1.8rem;
-    padding: 5% 8%;
-    text-decoration: none;
-    color: #ffffff;
-  }
 
-  .menu-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 20px;
-    padding-bottom: 25px;
-  }
-
-  #arrow-left {
-    background-color: transparent; // Fundo branco para o círculo do ícone Google
-    border: transparent;
-    color: #2979ff;
-    i {
-      background-color: transparent; // Fundo branco para o círculo do ícone Google
-      color: #2979ff; // Cor do ícone Google (vermelho)
-    }
-    &:hover {
-      i {
-        color: #80bfff;
-      }
-    }
-  }
-}
 
 ul {
   display: flex;
@@ -91,57 +47,4 @@ ul {
   }
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 28px;
 
-  input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-
-    &:checked + .slider {
-      background-color: #2196f3;
-
-      &:before {
-        transform: translateX(18px);
-      }
-    }
-
-    &:focus + .slider {
-      box-shadow: 0 0 1px #2196f3;
-    }
-  }
-
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-
-    &::before {
-      position: absolute;
-      content: "";
-      height: 20px;
-      width: 20px;
-      left: 6px;
-      bottom: 4px;
-      background-color: white;
-      transition: 0.4s;
-    }
-
-    &.round {
-      border-radius: 34px;
-
-      &::before {
-        border-radius: 50%;
-      }
-    }
-  }
-}

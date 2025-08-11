@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { Menu } from '../../shared/components/menu/menu';
 
 @Component({
   selector: 'app-default-index-layout',
-  imports: [NgIf],
+  imports: [Menu],
   templateUrl: './default-index-layout.html',
   styleUrl: './default-index-layout.scss',
 })
@@ -13,8 +14,7 @@ export class DefaultIndexLayout {
   abrirMenu() {
     this.menuAberto = true;
   }
-
-  fecharMenu() {
-    this.menuAberto = false;
+  onMenuMudou(novoEstado: boolean) {
+    this.menuAberto = novoEstado; // sincroniza
   }
 }

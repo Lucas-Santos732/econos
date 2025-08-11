@@ -1,0 +1,118 @@
+main {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.sidenav {
+  height: 100%;
+  width: 20rem;
+  position: fixed;
+  z-index: 1;
+  font: 100% K2D, sans-serif;
+  background-color: var(--color-surface);
+  overflow-x: hidden;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    padding-left: 5%;
+    font-size: 1.8rem;
+    padding: 5% 8%;
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .menu-row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 25px 20px;
+    background-color: var(--color-bg);
+    font-size: 20px;
+
+    #clock-center {
+      border: 1px solid var(--color-primary);
+      padding: 0px 10px;
+      border-radius: 5px;
+      color: var(--color-text);
+    }
+
+    #arrow-left {
+      background-color: transparent; // Fundo branco para o círculo do ícone Google
+      border: none;
+      color: var(--color-primary);
+
+      &:hover {
+        color: var(--color-primary-hover);
+      }
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 35px;
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+
+        &:checked + .slider {
+          background-color: transparent;
+          border: 1px solid var(--color-primary);
+
+          &:before {
+            transform: translateX(25px);
+          }
+        }
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        inset: 0;
+        background-color: transparent;
+        border: 1px solid var(--color-primary);
+        transition: 0.4s;
+
+        i {
+            color: var(--color-bg);
+            position: relative;
+
+        }
+        #icon-dark{
+            left: 30px;
+            top: 3px;
+        }
+        #icon-light {
+            left: 6px;
+            top: 3px;
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          height: 27px;
+          width: 27px;
+          left: 3px;
+          bottom: 3px;
+          background-color: var(--color-text);
+          transition: 0.4s;
+        }
+
+        &.round {
+          border-radius: 35px;
+
+          &::before {
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}

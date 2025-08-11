@@ -1,0 +1,18 @@
+<div id="mySidenav" class="sidenav" *ngIf="menuAberto">
+    <div class="menu-row">
+        <label class="switch">
+            <input type="checkbox" [checked]="isDarkTheme" (change)="toggleTheme($event)">
+            <span class="slider round">
+                <i id="icon-light" class="fa-solid fa-sun" *ngIf="!isDarkTheme"></i>
+                <i id="icon-dark" class="fa-solid fa-moon fa-lg" *ngIf="isDarkTheme"></i>
+            </span>
+        </label>
+        <p id="clock-center">20:00</p>
+        <button id="arrow-left" (click)="fecharMenu()"><i class="fa-solid fa-arrow-left fa-2xl"></i></button>
+    </div>
+
+    <a href="#"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+</div>

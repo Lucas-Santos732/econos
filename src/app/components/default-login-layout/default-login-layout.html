@@ -3,26 +3,42 @@
         <img src="imageAccount.jpg" alt="Econos Login Background">
     </section>
     <section class="form-section">
-        <h1>{{ title }}</h1>
-        <h2>{{ subTitle }}</h2>
-        <form class="form">
-            <div class="field-form">
+        <h1>{{ title() }}</h1>
+        <h2>{{ subTitle() }}</h2>
+        <form class="form" (ngSubmit)="submitForm()">
+            @if (isCadaster()) {
+            <div class="field-form nameDiv">
+                <label for="name">Nome</label>
+                <input type="name" id="name" name="name" placeholder="Digite seu E-mail">
+            </div>
+            } @else {
+            <br><br>
+            }
+            <div class="field-form emailDiv">
                 <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="Digite seu E-mail">
+                <input type="email" id="email" [(ngModel)]="loginForm.email" name="email" placeholder="Digite seu E-mail">
             </div>
             <div class="field-form">
                 <div class="password-labels-row">
                     <label for="password" class="label-password">Senha</label>
                     <a href="#" class="label-forgotten">Esqueceu a Senha?</a>
                 </div>
-                <input type="password" id="password" name="password" placeholder="Digite sua Senha">
+                <input type="password"[(ngModel)]="loginForm.password" id="password" name="password"
+                    placeholder="Digite sua Senha">
             </div>
 
             <button type="submit" class="btn-submit">Entrar</button>
 
+            @if (isCadaster()) {
             <div class="signup-text">
-                Não Tem Uma Conta? <a href="#">Cadastre-Se</a>
+                Já tem uma conta? <a href="login">Faça Login</a>
             </div>
+            }@else {
+            <div class="signup-text">
+                Não Tem Uma Conta? <a href="cadaster">Cadastre-Se</a>
+            </div>
+            }
+
             <div class="divider">
                 <span>Ou</span>
             </div>
