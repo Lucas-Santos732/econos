@@ -1,264 +1,202 @@
-main {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: center;
-  height: 100vh;
+:host,
+.login-container {
   width: 100vw;
-  margin: 0;
-  padding: 0;
-  font: 100% K2D, sans-serif;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  align-items: flex-start; // Alinha o conteúdo à esquerda (eixo cruzado)
-  justify-content: flex-start; // <--- MUDANÇA AQUI: Alinha o conteúdo ao TOPO (eixo principal)
-  padding: 0; // Padding será aplicado no .form-section
-}
-
-.image-section {
-  flex-grow: 1;
-  flex-basis: 0;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+  font-family: "K2D", sans-serif;
 }
 
-.form-section {
-  flex-grow: 0.5;
-  flex-basis: auto;
-  max-width: 43rem;
-  background-color: #fff;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-
-  h1 {
-    font-size: 2.8rem;
-    color: #2d55fb; // Cor azul para "CONOS"
-    margin-bottom: 0.5rem; // Espaço abaixo do H1
-    width: 100%;
-    text-align: left;
-    padding: 0; // Remove qualquer padding interno do H1
-    margin-top: 0; // Garante que não haja margem superior padrão do H1
-    padding-bottom: 7rem;
-    padding: 2rem 3rem; // <--- ESTE PADDING JÁ EMPURRA O H1 PARA BAIXO 3rem DO TOPO
-  }
-
-  h1::first-letter {
-    color: #050a24; // Cor mais escura para o primeiro caractere "E"
-  }
-
-  h2 {
-    padding: 3rem 7rem; // <--- ESTE PADDING JÁ EMPURRA O H1 PARA BAIXO 3rem DO TOPO
-
-    font-size: 2.2rem;
-    color: #101828;
-    height: auto;
-    padding-bottom: 1rem;
-    margin-top: 0;
-    width: 100%;
-    text-align: left;
-  }
-
-  .form {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .field-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    margin-bottom: 0.5rem;
-    box-sizing: border-box;
-    padding-bottom: 0;
-  }
-
-  .password-labels-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: -2px;
-  }
-
-  label {
-    padding: 1rem 7.2rem; // <--- ESTE PADDING JÁ EMPURRA O H1 PARA BAIXO 3rem DO TOPO
-
-    display: block;
-    color: #050a24;
-    margin-bottom: -8px;
-    text-align: left;
-    width: auto;
-    font-size: 1.3rem;
-  }
-
-  .label-forgotten {
-    padding: 1rem 7rem; // <--- ESTE PADDING JÁ EMPURRA O H1 PARA BAIXO 3rem DO TOPO
-
-    color: #2d55fb;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-left: auto;
-    padding-left: 0;
-    margin-bottom: -15px;
-  }
-
-  .label-password {
-    padding: 1rem 7.2rem; // <--- ESTE PADDING JÁ EMPURRA O H1 PARA BAIXO 3rem DO TOPO
-  }
-
-  input {
-    height: 3.4rem;
-    width: 67%;
-    border-radius: 6px;
-    box-sizing: border-box;
-    padding: 0 1rem;
-    border: 1px solid #ccc;
-    margin-left: 16.5%;
-    font-size: 1rem;
-  }
-
-  .btn-submit {
-    width: 67%;
-    height: 3.3rem;
-    background-color: #2d55fb;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    transition: background-color 0.2s ease;
-
-    &:hover {
-      background-color: darken(#2d55fb, 10%);
-    }
-  }
-
-  .signup-text {
-    text-align: center;
-    width: 100%;
-    font-size: 1rem;
-    color: #666;
-
-    a {
-      color: #2d55fb;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-  .divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 1.5rem 0;
-    width: 70%;
-
-    span {
-      font-size: 0.9rem;
-      color: #666;
-      padding: 0 10px;
-      position: relative;
-      z-index: 1;
-      margin: 0px 1rem;
-    }
-
-    &::before,
-    &::after {
-      content: "";
-      flex-grow: 1;
-      height: 1px;
-      background-color: #bcbcbc;
-      position: relative;
-      z-index: 0;
-    }
-
-    &::before {
-      margin-right: -10px;
-    }
-
-    &::after {
-      margin-left: -10px;
-    }
-  }
-
-  .social-login-buttons {
-    // ... estilos existentes
-    display: flex;
-    flex-direction: row; // <--- MUDANÇA: Para os botões ficarem lado a lado (como na imagem)
-    justify-content: center; // <--- MUDANÇA: Para centralizar os botões social na tela
-    gap: 1rem; // Espaçamento entre os botões
-    width: 100%;
-    margin-bottom: 1.5rem;
-  }
-
-  .btn-social {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // Removendo width: 100%; para que os botões não ocupem toda a largura
-    // height: 3rem; // Mantido, ajuste se quiser mudar
-    border-radius: 100%;
-    font-size: 1rem;
-    cursor: pointer;
-    border: 1px solid transparent; // Borda padrão
-
-    // Estilos para o texto do botão, para que fique ao lado do ícone
-
-    i {
-      // Estilos para fazer o ícone ficar em um círculo
-      display: inline-flex; // <--- MUDANÇA: Usar flex para centralizar o ícone SVG
-      align-items: center; // Centraliza o ícone SVG verticalmente
-      justify-content: center; // Centraliza o ícone SVG horizontalmente
-
-      width: 3.3rem; // <--- TAMANHO DO CÍRCULO: Largura fixa do círculo
-      height: 3.3rem; // <--- TAMANHO DO CÍRCULO: Altura fixa igual à largura
-      border-radius: 50%; // <--- CÍRCULO: Torna o elemento circular
-      font-size: 1.2rem; // <--- TAMANHO DO ÍCONE: Tamanho do ícone dentro do círculo
-
-      // CORES DO CÍRCULO (ajuste conforme sua paleta escura)
-      background-color: #282828; // <--- Fundo do círculo do ícone
-      color: #a0a0a0; // <--- Cor do ícone (branco/cinza claro no círculo)
-      border: 1px solid #3c3c3c; // <--- Borda do círculo
-    }
-
-    &.google {
-      background-color: #db4437; // Fundo do botão Google
-      color: #fff; // Cor do texto do botão
-      border-color: #db4437;
-
-      i {
-        background-color: #fff; // Fundo branco para o círculo do ícone Google
-        color: #db4437; // Cor do ícone Google (vermelho)
-        border-color: #db4437; // Borda da cor do botão
-      }
-
-      &:hover {
-        background-color: darken(#db4437, 10%);
-        border-color: darken(#db4437, 10%);
-      }
-    }
-  }
+.login-container {
+  position: relative; /* Essencial para o z-index funcionar nos filhos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-// <--- AQUI É ONDE SUA MEDIA QUERY PARA .form-section DEVE FICAR!
-@media (max-height: 700px) {
 
+/* --- CAMADA 1: IMAGEM DE FUNDO --- */
+.login-image-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/imageAccount.svg") no-repeat center center;
+  background-size: cover;
+  z-index: 1; /* Define como a camada de baixo */
+}
+
+/* Adiciona um leve escurecimento sobre a imagem para melhor legibilidade do formulário */
+.login-image-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* --- CAMADA 2: FORMULÁRIO --- */
+.login-form-overlay {
+  position: relative;
+  z-index: 2; /* Define como a camada de cima */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 420px;
+  background-color: #11182C; /* Cor de fundo escura para o painel do formulário */
+  color: #2979FF;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative; /* Para posicionar o ícone 'ai' dentro dele */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+.logo::first-letter {
+  color: #FFFFFF;
+}
+
+.btn-register {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn-register:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.form-content h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.form-content p {
+  color: #bdc3c7;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #ecf0f1;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: transparent;
+  border: 1px solid #34495e;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.input-group input::placeholder {
+  color: #7f8c8d;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 15px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.btn-login:hover {
+  background-color: #2980b9;
+}
+
+.divider {
+  text-align: center;
+  margin: 25px 0;
+  color: #7f8c8d;
+  display: flex;
+  align-items: baseline;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #34495e;
+}
+
+.divider span {
+  padding: 0 10px;
+}
+
+.btn-google {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  color: #333333;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s;
+}
+
+.btn-google:hover {
+  background-color: #f8f8f8;
+}
+
+.btn-google img {
+  width: 20px;
+  height: 20px;
+}
+
+.ai-icon {
+  position: absolute;
+  bottom: 10px;
+  color: #A6B1C3;
+  height: 15px;
+  border-radius: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
 }

@@ -1,53 +1,48 @@
-<main>
-    <section class="image-section">
-        <img src="imageAccount.jpg" alt="Econos Login Background">
-    </section>
-    <section class="form-section">
-        <h1>{{ title() }}</h1>
-        <h2>{{ subTitle() }}</h2>
-        <form class="form" (ngSubmit)="submitForm()">
-            @if (isCadaster()) {
-            <div class="field-form nameDiv">
-                <label for="name">Nome</label>
-                <input type="name" id="name" name="name" placeholder="Digite seu E-mail">
-            </div>
-            } @else {
-            <br><br>
-            }
-            <div class="field-form emailDiv">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" [(ngModel)]="loginForm.email" name="email" placeholder="Digite seu E-mail">
-            </div>
-            <div class="field-form">
-                <div class="password-labels-row">
-                    <label for="password" class="label-password">Senha</label>
-                    <a href="#" class="label-forgotten">Esqueceu a Senha?</a>
-                </div>
-                <input type="password"[(ngModel)]="loginForm.password" id="password" name="password"
-                    placeholder="Digite sua Senha">
-            </div>
+<div class="login-container">
+    <div class="login-image-background">
+    </div>
 
-            <button type="submit" class="btn-submit">Entrar</button>
-
-            @if (isCadaster()) {
-            <div class="signup-text">
-                Já tem uma conta? <a href="login">Faça Login</a>
-            </div>
-            }@else {
-            <div class="signup-text">
-                Não Tem Uma Conta? <a href="cadaster">Cadastre-Se</a>
-            </div>
-            }
-
-            <div class="divider">
-                <span>Ou</span>
-            </div>
-            <div class="social-login-buttons ">
-                <button type="button" class="btn-social google">
-                    <i class="fa-brands fa-google"></i>
+    <div class="login-form-overlay">
+        <div class="form-wrapper">
+            <div class="header">
+                <span class="logo">ECONOS</span>
+                <button class="btn-register">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                    </svg>
+                    Cadastrar
                 </button>
             </div>
 
-        </form>
-    </section>
-</main>
+            <div class="form-content">
+                <h1>Bem-vindo de volta!</h1>
+                <p>Faça login para continuar.</p>
+
+                <form (ngSubmit)="submitForm()">
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input [(ngModel)]="user.email" type="email" id="email" name="email" placeholder="Digite o seu e-mail">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Senha</label>
+                        <input [(ngModel)]="user.password" type="password" id="password" name="password"
+                            placeholder="Digite a sua senha">
+                    </div>
+                    <button type="submit" class="btn-login">Acessar</button>
+                </form>
+
+                <div class="divider">
+                    <span>ou</span>
+                </div>
+
+                <button class="btn-google">
+                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
+                    <span>Google</span>
+                </button>
+            </div>
+            <span class="ai-icon">Feito por Lucas-Santos732</span>
+        </div>
+    </div>
+</div>

@@ -1,29 +1,26 @@
 import { Component, input, output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { FloatLabelModule } from 'primeng/floatlabel';
+
 @Component({
   selector: 'app-default-login-layout',
-  imports: [FormsModule],
+  imports: [FormsModule, ButtonModule, FloatLabelModule],
+  standalone: true,
   templateUrl: './default-login-layout.html',
   styleUrl: './default-login-layout.scss',
 })
 export class DefaultLoginLayout {
-  // Inputs existentes
-  title = input<string>('');
-  subTitle = input<string>('');
-  isCadaster = input<boolean>(false);
-
-  // Objeto para coletar os dados do formulário
-  loginForm = {
+  user = {
     email: '',
     password: '',
-    name: '', // Opcional, dependendo do formulário
   };
 
-  // 1. Crie o output para o componente pai
+  constructor() {}
+  
   readonly submit = output<any>();
 
-  // 2. Função que emite os dados do formulário
   submitForm() {
-    this.submit.emit(this.loginForm);
+    this.submit.emit(this.user);
   }
 }
