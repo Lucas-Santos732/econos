@@ -1,0 +1,62 @@
+<div class="cadastro-container">
+  <div class="cadastro-image-background">
+  </div>
+
+  <div class="cadastro-form-overlay">
+    <div class="form-wrapper">
+      <div class="header">
+        <span class="logo">ECONOS</span>
+
+        <p-button label="Login" icon="pi pi-arrow-right" iconPos="right" routerLink="/login" [rounded]="true"
+          variant="outlined" severity="secondary" />
+
+      </div>
+
+      <div class="form-content">
+        <h1>Crie sua conta</h1>
+        <p>É rápido, vamos começar.</p>
+
+        <form>
+          <div class="input-group">
+            <label for="name">Nome completo</label>
+            <input type="text" id="name" placeholder="Digite o seu nome completo">
+          </div>
+
+          <p-floatlabel>
+            <input pInputText class="p-inputtext p-email-input" id="email" name="email"
+              autocomplete="off" />
+            <label class="p-floatlabel-label" for="email">Email</label>
+          </p-floatlabel>
+
+          <div class="input-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="Digite o seu melhor e-mail">
+          </div>
+
+          <div class="input-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" placeholder="Crie uma senha forte">
+          </div>
+
+          <div class="input-group">
+            <label for="confirm-password">Confirmar Senha</label>
+            <input type="password" id="confirm-password" placeholder="Digite a senha novamente">
+          </div>
+
+          <button pButton type="submit" label="Criar conta" severity="info" [fluid]="true">
+          </button>
+        </form>
+
+        <div class="divider">
+          <span>ou</span>
+        </div>
+
+        <button pButton type="submit" label="Google" severity="contrast" [fluid]="true">
+          <span class="pi pi-google"></span>
+        </button>
+
+      </div>
+      <span class="ai-icon">Feito por Lucas-Santos732</span>
+    </div>
+  </div>
+</div>

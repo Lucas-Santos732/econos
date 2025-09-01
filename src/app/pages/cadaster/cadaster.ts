@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { DefaultLoginLayout } from '../../components/default-login-layout/default-login-layout';
+import { DefaultCadasterLayout } from '../../components/default-cadaster-layout/default-cadaster-layout';
 
 @Component({
   selector: 'app-cadaster',
   standalone: true,
-  imports: [DefaultLoginLayout],
+  imports: [DefaultCadasterLayout],
   templateUrl: './cadaster.html',
   styleUrl: './cadaster.scss',
 })

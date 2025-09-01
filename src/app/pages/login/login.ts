@@ -21,11 +21,11 @@ export class Login implements OnInit {
 
   ngOnInit() {}
 
-  async onSubmit(formData: any) {
+  async submit(formData: any) {
     try {
       const result = await this.auth.login(formData);
       console.log(`Login efetaudo: ${result}`);
-      this.router.navigate(['index']);
+      this.router.navigate(['app']);
     } catch (error) {
       console.error(error);
     }
