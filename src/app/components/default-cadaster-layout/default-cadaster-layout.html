@@ -1,0 +1,84 @@
+<div class="cadastro-container">
+  <div class="cadastro-image-background">
+  </div>
+
+  <div class="cadastro-form-overlay">
+    <div class="form-wrapper">
+      <div class="header">
+        <span class="logo">ECONOS</span>
+
+        <p-button label="Login" icon="pi pi-arrow-right" iconPos="right" routerLink="/login" [rounded]="true"
+          variant="outlined" severity="secondary" />
+
+      </div>
+
+      <div class="form-content">
+        <h1>Crie sua conta</h1>
+        <p>É rápido, vamos começar.</p>
+
+        <form>
+
+          <section class="row name">
+
+            <p-floatlabel class="nome">
+              <input pInputText class="p-inputtext p-input" id="nome" name="nome" [(ngModel)]="cadaster.nome" />
+              <label class="p-floatlabel-label" for="nome">Nome</label>
+            </p-floatlabel>
+
+            <p-floatlabel>
+              <input pInputText class="p-inputtext p-input" id="sobrenome" name="sobrenome" autocomplete="off"
+                [(ngModel)]="cadaster.sobrenome" />
+              <label class="p-floatlabel-label" for="sobrenome">Sobrenome</label>
+            </p-floatlabel>
+
+          </section>
+
+          <section class="row">
+
+            <p-floatlabel>
+              <input pInputText class="p-inputtext p-input" id="email" name="email" autocomplete="off"
+                [(ngModel)]="cadaster.email" />
+              <label class="p-floatlabel-label" for="email">Email</label>
+            </p-floatlabel>
+            <p-floatlabel>
+              <input pInputText class="p-inputtext p-input" id="email" name="email" autocomplete="off"
+                [(ngModel)]="cadaster.email" />
+              <label class="p-floatlabel-label" for="email">Email</label>
+            </p-floatlabel>
+
+          </section>
+
+          <section class="row">
+
+            <p-floatlabel>
+              <input pInputText class="p-inputtext p-input" id="password" name="password" autocomplete="off"
+                [(ngModel)]="cadaster.senha" />
+              <label class="p-floatlabel-label" for="password">Senha</label>
+            </p-floatlabel>
+
+            <p-floatlabel>
+              <input pInputText class="p-inputtext p-input" id="passwordconfirma" name="passwordconfirma"
+                autocomplete="off" [(ngModel)]="cadaster.SenhaConfirmar" />
+              <label class="p-floatlabel-label" for="passwordconfirma">Confirmar Senha</label>
+            </p-floatlabel>
+
+          </section>
+
+
+          <button pButton type="submit" label="Criar conta" severity="info" [fluid]="true">
+          </button>
+        </form>
+
+        <div class="divider">
+          <span>ou</span>
+        </div>
+
+        <button pButton id="google" type="submit" label="Google" severity="contrast" [fluid]="true">
+          <span class="pi pi-google"></span>
+        </button>
+
+      </div>
+      <span class="ai-icon">Feito por Lucas-Santos732</span>
+    </div>
+  </div>
+</div>

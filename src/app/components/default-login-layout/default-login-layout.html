@@ -1,53 +1,89 @@
-<main>
-    <section class="image-section">
-        <img src="imageAccount.jpg" alt="Econos Login Background">
-    </section>
-    <section class="form-section">
-        <h1>{{ title() }}</h1>
-        <h2>{{ subTitle() }}</h2>
-        <form class="form" (ngSubmit)="submitForm()">
-            @if (isCadaster()) {
-            <div class="field-form nameDiv">
-                <label for="name">Nome</label>
-                <input type="name" id="name" name="name" placeholder="Digite seu E-mail">
-            </div>
-            } @else {
-            <br><br>
-            }
-            <div class="field-form emailDiv">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" [(ngModel)]="loginForm.email" name="email" placeholder="Digite seu E-mail">
-            </div>
-            <div class="field-form">
-                <div class="password-labels-row">
-                    <label for="password" class="label-password">Senha</label>
-                    <a href="#" class="label-forgotten">Esqueceu a Senha?</a>
-                </div>
-                <input type="password"[(ngModel)]="loginForm.password" id="password" name="password"
-                    placeholder="Digite sua Senha">
-            </div>
+<div class="login-container">
+  <div class="login-image-background">
+  </div>
 
-            <button type="submit" class="btn-submit">Entrar</button>
+  <div class="login-form-overlay">
+    <div class="form-wrapper">
+      <div class="header">
+        <span class="logo">ECONOS</span>
+        <p-button label="Cadastrar" icon="pi pi-arrow-right" iconPos="right" routerLink="/cadaster" [rounded]="true "
+          variant="outlined" severity="secondary" />
+      </div>
 
-            @if (isCadaster()) {
-            <div class="signup-text">
-                Já tem uma conta? <a href="login">Faça Login</a>
-            </div>
-            }@else {
-            <div class="signup-text">
-                Não Tem Uma Conta? <a href="cadaster">Cadastre-Se</a>
-            </div>
+      <div class="form-content">
+        <h1>Bem-vindo de volta!</h1>
+        <p>Faça login para continuar.</p>
+
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+          <p-floatlabel>
+            <p-iconfield>
+              <p-inputicon class="pi pi-user" />
+              <input pInputText type="email" id="email" class="p-inputtext p-email-input" name="email"
+                [invalid]="email.invalid && (email.touched || loginForm.submitted)|| loginInvalido"
+                [(ngModel)]="login.email" #email="ngModel" autocomplete="off" required email />
+            </p-iconfield>
+            <label for="email">Email</label>
+          </p-floatlabel>
+
+          @if (email.invalid && (email.touched || loginForm.submitted) || loginInvalido) {
+          <p-message severity="error" size="small" variant="simple">
+
+            @if (email.hasError('required')) {
+            E-mail é obrigatório.
             }
 
-            <div class="divider">
-                <span>Ou</span>
-            </div>
-            <div class="social-login-buttons ">
-                <button type="button" class="btn-social google">
-                    <i class="fa-brands fa-google"></i>
-                </button>
-            </div>
+            @if (email.hasError('email')) {
+            Digite um e-mail válido. Ex:teste@teste.com
+            }
 
+            @if (loginInvalido) {
+            E-mail Inválido
+            }
+          </p-message>
+          }
+
+          <br>
+
+          <p-floatlabel>
+            <p-iconfield>
+              <p-inputicon class="pi pi-unlock" />
+              <p-password id="password" name="password" #password="ngModel"
+                [invalid]="password.invalid && (password.touched || loginForm.submitted)|| loginInvalido"
+                [(ngModel)]="login.password" [toggleMask]="true" [feedback]="false" required>
+              </p-password>
+            </p-iconfield>
+            <label for="password" class="p-floatlabel-label">Senha</label>
+          </p-floatlabel>
+
+          @if (password.invalid && (password.touched || loginForm.submitted) || loginInvalido) {
+          <p-message severity="error" size="small" variant="simple">
+
+            @if (password.hasError('required')) {
+            Senha é obrigatório.
+            }
+
+            @if (loginInvalido) {
+            Senha Inválido
+            }
+          </p-message>
+          }
+
+          <br>
+
+          <button pButton type="submit" label="Acessar" severity="info" [fluid]="true" [disabled]="loginForm.invalid">
+          </button>
         </form>
-    </section>
-</main>
+
+        <p-divider align="center">
+          <b>ou</b>
+        </p-divider>
+
+        <button pButton type="submit" label="Google" severity="contrast" [fluid]="true">
+          <span class="pi pi-google"></span>
+        </button>
+
+      </div>
+      <span class="ai-icon">Feito por Lucas-Santos732</span>
+    </div>
+  </div>
+</div>
