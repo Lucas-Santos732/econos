@@ -51,7 +51,7 @@
 
 .form-wrapper {
   width: 100%;
-  max-width: 500px;
+  max-width: 525px;
   background-color: #11182c; /* Cor de fundo escura para o painel do formulário */
   color: #2979ff;
   padding: 40px;
@@ -190,3 +190,33 @@
   justify-content: center;
   font-size: 12px;
 }
+
+.p-floatlabel {
+  width: 100%; // Garante que o contêiner ocupe 100% da largura disponível
+  margin-bottom: 30px;
+  .p-password {
+    width: 100%;
+  }
+
+  .p-button {
+    background-color: #2979ff;
+    color: #2979ff;
+  }
+
+  ::ng-deep .p-input,
+  ::ng-deep .p-password-input {
+    background-color: transparent;
+    font-size: 15px;
+    border-radius: 8px;
+    color: #ecf0f1;
+  }
+}
+
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+

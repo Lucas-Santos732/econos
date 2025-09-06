@@ -1,6 +1,7 @@
 import { Component, input, Input } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Menu } from '../../shared/components/menu/menu';
+import { FloatLabelModule } from 'primeng/floatlabel';
 
 @Component({
   selector: 'app-default-index-layout',

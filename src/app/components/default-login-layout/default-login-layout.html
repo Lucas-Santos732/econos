@@ -14,27 +14,70 @@
         <h1>Bem-vindo de volta!</h1>
         <p>Faça login para continuar.</p>
 
-        <form (ngSubmit)="submitForm()">
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
           <p-floatlabel>
-            <input pInputText class="p-inputtext p-email-input" id="email" name="email" [(ngModel)]="login.email"
-              autocomplete="off" />
-            <label class="p-floatlabel-label" for="email">Email</label>
+            <p-iconfield>
+              <p-inputicon class="pi pi-user" />
+              <input pInputText type="email" id="email" class="p-inputtext p-email-input" name="email"
+                [invalid]="email.invalid && (email.touched || loginForm.submitted)|| loginInvalido"
+                [(ngModel)]="login.email" #email="ngModel" autocomplete="off" required email />
+            </p-iconfield>
+            <label for="email">Email</label>
           </p-floatlabel>
 
+          @if (email.invalid && (email.touched || loginForm.submitted) || loginInvalido) {
+          <p-message severity="error" size="small" variant="simple">
+
+            @if (email.hasError('required')) {
+            E-mail é obrigatório.
+            }
+
+            @if (email.hasError('email')) {
+            Digite um e-mail válido. Ex:teste@teste.com
+            }
+
+            @if (loginInvalido) {
+            E-mail Inválido
+            }
+          </p-message>
+          }
+
+          <br>
+
           <p-floatlabel>
-            <p-password id="password" name="password" [(ngModel)]="login.password" [toggleMask]="true"
-              [feedback]="false">
-            </p-password>
+            <p-iconfield>
+              <p-inputicon class="pi pi-unlock" />
+              <p-password id="password" name="password" #password="ngModel"
+                [invalid]="password.invalid && (password.touched || loginForm.submitted)|| loginInvalido"
+                [(ngModel)]="login.password" [toggleMask]="true" [feedback]="false" required>
+              </p-password>
+            </p-iconfield>
             <label for="password" class="p-floatlabel-label">Senha</label>
           </p-floatlabel>
 
-          <button pButton type="submit" label="Acessar" severity="info" [fluid]="true">
+          @if (password.invalid && (password.touched || loginForm.submitted) || loginInvalido) {
+          <p-message severity="error" size="small" variant="simple">
+
+            @if (password.hasError('required')) {
+            Senha é obrigatório.
+            }
+
+            @if (loginInvalido) {
+            Senha Inválido
+            }
+          </p-message>
+          }
+
+          <br>
+
+          <button pButton type="submit" label="Acessar" severity="info" [fluid]="true" [disabled]="loginForm.invalid">
           </button>
         </form>
 
-        <div class="divider">
-          <span>ou</span>
-        </div>
+        <p-divider align="center">
+          <b>ou</b>
+        </p-divider>
+
         <button pButton type="submit" label="Google" severity="contrast" [fluid]="true">
           <span class="pi pi-google"></span>
         </button>

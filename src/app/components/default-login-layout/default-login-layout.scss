@@ -73,7 +73,6 @@
   color: #ffffff;
 }
 
-
 .btn-register:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
@@ -172,28 +171,14 @@
 
 .p-floatlabel {
   width: 100%; // Garante que o contêiner ocupe 100% da largura disponível
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
   .p-password {
     width: 100%;
   }
 
-  .p-button {
-    background-color: #2979ff;
-    color: #2979ff;
-  }
-  button {
-    .p-ripple {
-      .p-button {
-        .p-component {
-          width: 100%;
-        }
-      }
-    }
-  }
   ::ng-deep .p-email-input,
   ::ng-deep .p-password-input {
     background-color: transparent;
-    padding: 12px 15px;
     width: 100%;
     font-size: 15px;
     border-radius: 8px;
@@ -201,6 +186,3 @@
   }
 }
 
-:root {
-  --p-button-primary-background: #008000; /* Um verde forte */
-}
